@@ -48,7 +48,7 @@ var page={
 				}
 			)
 		}else{
-			formError.show(validateResult.msg);
+			//formError.show(validateResult.msg);
 		}
 	},
 	//表单的验证
@@ -57,11 +57,11 @@ var page={
 			status:false,
 			msg:'',
 		}
-		if(!_mm.validate(formData.username,'require')){
+		if(!(_mm.validate(formData.username,'require'))){
 			result.msg='用户名不能为空';
 			return result;
 		}
-		if(!_mm.validate(formData.password,'require'){
+		if(!(_mm.validate(formData.password,'require'))){
 			result.msg="密码不能为空";
 			return result;
 		}

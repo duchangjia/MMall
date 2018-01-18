@@ -64,7 +64,7 @@ const config= {
       node_modules:__dirname+'/node_modules',
       util:__dirname+'/src/util',
       page:__dirname+'/src/page',
-      server:__dirname+'/src/server',
+      service:__dirname+'/src/service',
       image:__dirname+'/src/image',
     },
   },
