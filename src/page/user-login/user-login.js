@@ -20,7 +20,7 @@ var page={
 	},
 	bindEvent:function(){
 		var _this=this;
-		$('submit').click(function(){
+		$('#submit').click(function(){
 			_this.submit();
 		});
 		$('.user-content').keyup(function(e){
@@ -34,21 +34,21 @@ var page={
 		var formData={
 			username:$.trim($('#username').val()),
 			password:$.trim($('#password').val()),
-		}
+		};
 		//表单验证结果
-		validateResult=this.formValidate(formData);
+		var validateResult=this.formValidate(formData);
 		//验证成功
 		if(validateResult.status){
 			_user.login(formData,
 				function(res){
 					window.location.href=_mm.getUrlParam('redirect') || './index.html';
 				},
-				function(validateResult.msg){
-					formError.show(validateResult.msg);
+				function(errMsg){
+					formError.show(errMsg);
 				}
 			)
 		}else{
-			//formError.show(validateResult.msg);
+			formError.show(validateResult.msg);
 		}
 	},
 	//表单的验证
@@ -71,3 +71,6 @@ var page={
 		return result;
 	}
 }
+$(function(){
+	page.init();
+})

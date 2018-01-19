@@ -27,7 +27,8 @@ const config= {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath:'/dist',
+    publicPath:'/dist/',
+    //publicPath:'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/dist/',
     filename: 'js/[name].js'
   },
   externals:{
@@ -56,6 +57,10 @@ const config= {
       {
           test: /\.string$/,
           loader:'html-loader',
+          query:{
+            minimize:true,
+            removeAttributeQuotes:false,
+          }
       },
     ]
   },
